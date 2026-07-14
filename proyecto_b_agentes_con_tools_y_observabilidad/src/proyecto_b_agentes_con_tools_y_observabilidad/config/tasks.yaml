@@ -1,0 +1,39 @@
+investiga_contenido:
+  description: >
+    El investigador de contenido utiliza la herramienta SerperDevTool para buscar información relevante sobre el tema {topico}. Debe identificar tendencias, cuestiones relacionadas y reunir materiales de referencia que sirvan como base para el desarrollo del contenido. Recordando que estamos en el año 2025.
+  expected_output: >
+    Un informe de investigación que contenga un resumen de la información recolectada, incluyendo enlaces a fuentes relevantes, temas de interés y datos importantes que apoyarán las próximas etapas de planificación y creación de contenido.
+  agent: investigador_de_contenido
+
+planifica_contenido:
+  description: >
+    El planificador de contenido organiza la información del informe del investigador y utiliza la herramienta ScrapeWebsiteTool para hacer scraping de los sitios, creando un briefing detallado que define el contenido que será desarrollado, incluyendo formato y estructura, generando buenos briefings para el tema: {topico}.
+  expected_output: >
+    Un briefing completo que delimite claramente la estructura del contenido, los puntos principales a abordar y una lista de fuentes o materiales que serán utilizados en el desarrollo del artículo.
+  agent: planificador_de_contenido
+
+escribe_post_blog:
+  description: >
+    El escritor del blog utiliza el briefing desarrollado por el planificador de contenido para crear un artículo completo sobre el tema {topico}, asegurando que toda la información se presente de forma coherente y que el texto cumpla con los objetivos del equipo.
+  expected_output: >
+    El artículo de blog escrito, que debe ser atractivo, claro e informativo, abordando todos los puntos discutidos en el briefing y listo para la revisión final.
+  agent: escritor_del_blog
+
+revisa_contenido:
+  description: >
+    El revisor de contenido revisa el artículo escrito para asegurar que no haya errores de gramática, ortografía o claridad. También agrega información relevante que pueda enriquecer el texto.
+  expected_output: >
+    Un documento revisado y pulido, libre de errores, que incluya todas las mejoras realizadas y que esté correctamente formateado para su publicación, listo para ser compartido con el público.
+  agent: revisor_de_contenido
+
+guarda_contenido:
+  description: >
+    Guarda el contenido utilizando la herramienta FileWriterTool. Debes pasar los siguientes parámetros a la herramienta:
+      - filename: un nombre de archivo descriptivo con extensión .md que refleje el contenido del texto (por ejemplo, "guia_claude_code_2025.md").
+      - directory: "Results"
+      - overwrite: "True"
+      - content: el contenido revisado completo del artículo.
+    Esto asegura que el archivo se guarde dentro de la carpeta Results/ en la raíz del proyecto.
+  expected_output: >
+    Archivo guardado correctamente dentro de la carpeta Results/.
+  agent: revisor_de_contenido

@@ -1,0 +1,17 @@
+# Secrets / credenciales
+.env
+*.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+agentops.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
